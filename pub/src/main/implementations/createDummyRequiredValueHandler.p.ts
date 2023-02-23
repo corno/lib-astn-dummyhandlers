@@ -1,10 +1,8 @@
 
-
-import * as api from "../api"
-
+import * as mapi from "../api"
 import * as mh from "glo-astn-handlers"
 
-export const $$: api.CcreateDummyRequiredValueHandler = () => {
+export const $$: mapi.CcreateDummyRequiredValueHandler = () => {
 
     function createDummyValueHandler<TokenAnnotation>(): mh.IValueHandler<TokenAnnotation> {
 

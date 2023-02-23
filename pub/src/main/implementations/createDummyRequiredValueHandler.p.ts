@@ -1,12 +1,13 @@
 
-import * as mapi from "../api"
-import * as mh from "glo-astn-handlers"
+import * as gh from "glo-astn-handlers"
 
-export const $$: mapi.CcreateDummyRequiredValueHandler = () => {
+import { CcreateDummyRequiredValueHandler } from "../api"
 
-    function createDummyValueHandler<TokenAnnotation>(): mh.IValueHandler<TokenAnnotation> {
+export const $$:CcreateDummyRequiredValueHandler = () => {
 
-        function createDummyObjectHandler(): mh.IObjectHandler<TokenAnnotation> {
+    function createDummyValueHandler<TokenAnnotation>(): gh.IValueHandler<TokenAnnotation> {
+
+        function createDummyObjectHandler(): gh.IObjectHandler<TokenAnnotation> {
             return {
                 property: () => {
                     return createDummyRequiredValueHandler()
@@ -17,7 +18,7 @@ export const $$: mapi.CcreateDummyRequiredValueHandler = () => {
                 onEnd: () => { },
             }
         }
-        function createDummyArrayHandler(): mh.IArrayHandler<TokenAnnotation> {
+        function createDummyArrayHandler(): gh.IArrayHandler<TokenAnnotation> {
             return {
                 element: () => {
                     return createDummyValueHandler()
@@ -25,7 +26,7 @@ export const $$: mapi.CcreateDummyRequiredValueHandler = () => {
                 onEnd: () => { }
             }
         }
-        function createDummyTaggedUnionHandler(): mh.ITaggedUnionHandler<TokenAnnotation> {
+        function createDummyTaggedUnionHandler(): gh.ITaggedUnionHandler<TokenAnnotation> {
             return {
                 option: () => createDummyRequiredValueHandler(),
                 missingOption: () => createDummyRequiredValueHandler(),
@@ -50,7 +51,7 @@ export const $$: mapi.CcreateDummyRequiredValueHandler = () => {
         }
     }
 
-    function createDummyRequiredValueHandler<TokenAnnotation>(): mh.IRequiredValueHandler<TokenAnnotation> {
+    function createDummyRequiredValueHandler<TokenAnnotation>(): gh.IRequiredValueHandler<TokenAnnotation> {
         return {
             missing: () => {
             },

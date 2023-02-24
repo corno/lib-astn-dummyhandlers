@@ -2,7 +2,7 @@ import * as pt from 'pareto-core-types'
 
 import { T   } from './types.generated'
 
-import * as mcommon from "glo-pareto-common"
-import * as mh from "glo-astn-handlers"
+import * as gcommon from "glo-pareto-common"
+import * as gh from "glo-astn-handlers"
 
-export type FCreateDummyRequiredValueHandler = <GPAnnotation>($: mcommon.T.Null,) => mh.IRequiredValueHandler<T.Annotation<GPAnnotation>>
+export type FCreateDummyRequiredValueHandler = <GPAnnotation>($: gcommon.T.Null,) => gh.IRequiredValueHandler<T.Annotation<GPAnnotation>>

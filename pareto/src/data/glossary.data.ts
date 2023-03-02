@@ -30,7 +30,7 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
         "CreateDummyRequiredValueHandler": func(typeReference("common", "Null"), null, null, inf(parametrizedInterfaceReference("h", { "Annotation": typeReference("Annotation") }, "RequiredValueHandler"))),
     }),
     'parameters': d({
-        "Annotation": {},
+        "Annotation": null,
     }),
     'types': d({
         "Annotation": type(glossaryParameter("Annotation")),

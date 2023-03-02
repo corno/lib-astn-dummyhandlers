@@ -1,7 +1,7 @@
 
 import * as gh from "glo-astn-handlers"
 
-import { CcreateDummyRequiredValueHandler } from "../api"
+import { CcreateDummyRequiredValueHandler } from "../definition/api.generated"
 
 export const $$:CcreateDummyRequiredValueHandler = () => {
 

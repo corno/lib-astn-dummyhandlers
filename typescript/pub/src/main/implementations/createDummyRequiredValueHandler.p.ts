@@ -1,13 +1,13 @@
 
 import * as gh from "glo-astn-handlers"
 
-import { CcreateDummyRequiredValueHandler } from "../definition/api.generated"
+import { createDummyRequiredValueHandler } from "../definition/api.generated"
 
-export const $$:CcreateDummyRequiredValueHandler = () => {
+export const $$: createDummyRequiredValueHandler = () => {
 
-    function createDummyValueHandler<TokenAnnotation>(): gh.IValueHandler<TokenAnnotation> {
+    function createDummyValueHandler<TokenAnnotation>(): gh.I.ValueHandler<TokenAnnotation> {
 
-        function createDummyObjectHandler(): gh.IObjectHandler<TokenAnnotation> {
+        function createDummyObjectHandler(): gh.I.ObjectHandler<TokenAnnotation> {
             return {
                 property: () => {
                     return createDummyRequiredValueHandler()
@@ -18,7 +18,7 @@ export const $$:CcreateDummyRequiredValueHandler = () => {
                 onEnd: () => { },
             }
         }
-        function createDummyArrayHandler(): gh.IArrayHandler<TokenAnnotation> {
+        function createDummyArrayHandler(): gh.I.ArrayHandler<TokenAnnotation> {
             return {
                 element: () => {
                     return createDummyValueHandler()
@@ -26,7 +26,7 @@ export const $$:CcreateDummyRequiredValueHandler = () => {
                 onEnd: () => { }
             }
         }
-        function createDummyTaggedUnionHandler(): gh.ITaggedUnionHandler<TokenAnnotation> {
+        function createDummyTaggedUnionHandler(): gh.I.TaggedUnionHandler<TokenAnnotation> {
             return {
                 option: () => createDummyRequiredValueHandler(),
                 missingOption: () => createDummyRequiredValueHandler(),
@@ -51,7 +51,7 @@ export const $$:CcreateDummyRequiredValueHandler = () => {
         }
     }
 
-    function createDummyRequiredValueHandler<TokenAnnotation>(): gh.IRequiredValueHandler<TokenAnnotation> {
+    function createDummyRequiredValueHandler<TokenAnnotation>(): gh.I.RequiredValueHandler<TokenAnnotation> {
         return {
             missing: () => {
             },

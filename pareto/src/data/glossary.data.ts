@@ -22,14 +22,15 @@ import * as gglossary from "lib-pareto-typescript-project/dist/submodules/glossa
 const d = pd.d
 
 export const $: gglossary.T.Glossary<pd.SourceLocation> = {
-    'functions': d({
-        "CreateDummyRequiredValueHandler": func(typeReference("common", "Null"), null, null, inf(parametrizedInterfaceReference("h", { "Annotation": typeReference("Annotation") }, "RequiredValueHandler"))),
-    }),
     'parameters': d({
         "Annotation": null,
     }),
     'types': d({
         "Annotation": type(glossaryParameter("Annotation")),
     }),
+    'builders': d({}),
     'interfaces': d({}),
+    'functions': d({
+        "CreateDummyRequiredValueHandler": func(typeReference("common", "Null"), null, null, inf(parametrizedInterfaceReference("h", { "Annotation": typeReference("Annotation") }, "RequiredValueHandler"))),
+    }),
 }

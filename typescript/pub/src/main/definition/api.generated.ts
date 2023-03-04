@@ -1,9 +1,9 @@
 import * as pt from 'pareto-core-types'
 
-import * as gthis from "./glossary"
+import * as g_this from "./glossary"
 
-export type CcreateDummyRequiredValueHandler = gthis.FCreateDummyRequiredValueHandler
+export type createDummyRequiredValueHandler = g_this.F.CreateDummyRequiredValueHandler
 
 export type API = {
-    createDummyRequiredValueHandler: CcreateDummyRequiredValueHandler
+    createDummyRequiredValueHandler: createDummyRequiredValueHandler
 }

@@ -7,6 +7,6 @@ const d = pd.d
 
 export const $: gapi.T.API<pd.SourceLocation> = {
     'algorithms': d({
-        "createDummyRequiredValueHandler": algorithm(functionReference("this", {}, "CreateDummyRequiredValueHandler"))
-    })
+        "createDummyRequiredValueHandler": algorithm(functionReference("this", {}, "CreateDummyRequiredValueHandler")),
+    }),
 }

@@ -1,14 +1,14 @@
 
-import * as gh from "glo-astn-handlers"
+import * as g_h from "glo-astn-handlers"
 
 import { createDummyRequiredValueHandler } from "../api.generated"
 
 export const $$: createDummyRequiredValueHandler = () => {
     return () => {
 
-        function createDummyValueHandler<TokenAnnotation>(): gh.I.ValueHandler<TokenAnnotation> {
+        function createDummyValueHandler<TokenAnnotation>(): g_h.I.ValueHandler<TokenAnnotation> {
 
-            function createDummyObjectHandler(): gh.I.ObjectHandler<TokenAnnotation> {
+            function createDummyObjectHandler(): g_h.I.ObjectHandler<TokenAnnotation> {
                 return {
                     property: () => {
                         return createDummyRequiredValueHandler()
@@ -19,7 +19,7 @@ export const $$: createDummyRequiredValueHandler = () => {
                     onEnd: () => { },
                 }
             }
-            function createDummyArrayHandler(): gh.I.ArrayHandler<TokenAnnotation> {
+            function createDummyArrayHandler(): g_h.I.ArrayHandler<TokenAnnotation> {
                 return {
                     element: () => {
                         return createDummyValueHandler()
@@ -27,7 +27,7 @@ export const $$: createDummyRequiredValueHandler = () => {
                     onEnd: () => { }
                 }
             }
-            function createDummyTaggedUnionHandler(): gh.I.TaggedUnionHandler<TokenAnnotation> {
+            function createDummyTaggedUnionHandler(): g_h.I.TaggedUnionHandler<TokenAnnotation> {
                 return {
                     option: () => createDummyRequiredValueHandler(),
                     missingOption: () => createDummyRequiredValueHandler(),
@@ -52,7 +52,7 @@ export const $$: createDummyRequiredValueHandler = () => {
             }
         }
 
-        function createDummyRequiredValueHandler<TokenAnnotation>(): gh.I.RequiredValueHandler<TokenAnnotation> {
+        function createDummyRequiredValueHandler<TokenAnnotation>(): g_h.I.RequiredValueHandler<TokenAnnotation> {
             return {
                 missing: () => {
                 },

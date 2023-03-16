@@ -5,7 +5,7 @@ import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/gloss
 
 const d = pd.d
 
-import { $ as pure } from "./api.data"
+import { $ as api } from "./api.data"
 import { $ as glossary } from "./glossary.data"
 
 import { external, this_ } from "lib-pareto-typescript-project/dist/submodules/project/shorthands"
@@ -32,7 +32,7 @@ export const $: g_project.T.Project<pd.SourceLocation> = {
                 }),
             },
             'api': {
-                'root': pure,
+                'root': api,
                 'imports': d({
                     "this": this_(),
                     "common": external("glo-pareto-common"),

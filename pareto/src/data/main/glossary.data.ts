@@ -16,6 +16,7 @@ import {
     externalTypeReference,
     interfaceReference,
     imp,
+    clss,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -26,17 +27,16 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
         "Annotation": null,
     }),
     'imports': d({
-        "common": imp({}),
-        "h": imp({ "Annotation": typeReference("Annotation") })
+        "h": imp({ "Annotation": typeReference("Annotation")})
     }),
     'types': d({
         "Annotation": type(glossaryParameter("Annotation")),
     }),
     'type': ['asynchronous', {
         'interfaces': d({}),
-        'functions': d({
-            "CreateDummyRequiredValueHandler": afunc(externalTypeReference("common", "Null"), null, inf(interfaceReference("h", "RequiredValueHandler"))),
+        'classes': d({
+            "DummyRequiredValueHandler": clss(interfaceReference("h", "RequiredValueHandler"), {})
         }),
-
+        'functions': d<g_glossary.T.Glossary._ltype.asynchronous.functions.D<pd.SourceLocation>>({}),
     }],
 }

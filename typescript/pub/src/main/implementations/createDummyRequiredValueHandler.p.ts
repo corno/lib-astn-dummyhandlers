@@ -1,65 +1,63 @@
 
 import * as g_h from "glo-astn-handlers"
 
-import { createDummyRequiredValueHandler } from "../api.generated"
+import { A } from "../api.generated"
 
-export const $$: createDummyRequiredValueHandler = () => {
-    return () => {
+export const $$: A.createDummyRequiredValueHandler = () => {
+    function createDummyValueHandler<TokenAnnotation>(): g_h.I.ValueHandler<TokenAnnotation> {
 
-        function createDummyValueHandler<TokenAnnotation>(): g_h.I.ValueHandler<TokenAnnotation> {
-
-            function createDummyObjectHandler(): g_h.I.ObjectHandler<TokenAnnotation> {
-                return {
+        function createDummyObjectHandler(): g_h.I.ObjectHandler<TokenAnnotation> {
+            return {
+                data: {
                     property: () => {
                         return createDummyRequiredValueHandler()
                     },
                     anonymousProperty: () => {
                         return createDummyValueHandler()
                     },
-                    onEnd: () => { },
-                }
-            }
-            function createDummyArrayHandler(): g_h.I.ArrayHandler<TokenAnnotation> {
-                return {
-                    element: () => {
-                        return createDummyValueHandler()
-                    },
-                    onEnd: () => { }
-                }
-            }
-            function createDummyTaggedUnionHandler(): g_h.I.TaggedUnionHandler<TokenAnnotation> {
-                return {
-                    option: () => createDummyRequiredValueHandler(),
-                    missingOption: () => createDummyRequiredValueHandler(),
-                    onEnd: () => { }
-                }
-            }
-            return {
-                object: () => {
-                    return createDummyObjectHandler()
                 },
-                array: () => {
-                    return createDummyArrayHandler()
-                },
-                taggedUnion: () => {
-                    return createDummyTaggedUnionHandler()
-                },
-                simpleString: () => {
-                },
-                multilineString: () => {
-
-                }
+                end: () => { },
             }
         }
-
-        function createDummyRequiredValueHandler<TokenAnnotation>(): g_h.I.RequiredValueHandler<TokenAnnotation> {
+        function createDummyArrayHandler(): g_h.I.ArrayHandler<TokenAnnotation> {
             return {
-                missing: () => {
+                data: () => {
+                    return createDummyValueHandler()
                 },
-                exists: createDummyValueHandler()
+                end: () => { }
             }
-
         }
-        return createDummyRequiredValueHandler()
+        function createDummyTaggedUnionHandler(): g_h.I.TaggedUnionHandler<TokenAnnotation> {
+            return {
+                option: () => createDummyRequiredValueHandler(),
+                missingOption: () => createDummyRequiredValueHandler(),
+            }
+        }
+        return {
+            object: () => {
+                return createDummyObjectHandler()
+            },
+            array: () => {
+                return createDummyArrayHandler()
+            },
+            taggedUnion: () => {
+                return createDummyTaggedUnionHandler()
+            },
+            simpleString: () => {
+            },
+            multilineString: () => {
+
+            }
+        }
     }
+
+    function createDummyRequiredValueHandler<TokenAnnotation>(): g_h.I.RequiredValueHandler<TokenAnnotation> {
+        return {
+            missing: () => {
+            },
+            exists: createDummyValueHandler()
+        }
+    }
+    
+    return createDummyRequiredValueHandler()
 }

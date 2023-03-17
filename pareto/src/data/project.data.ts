@@ -5,8 +5,8 @@ import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/gloss
 
 const d = pd.d
 
-import { $ as api } from "./api.data"
-import { $ as glossary } from "./glossary.data"
+import { $ as api } from "./main/api.data"
+import { $ as glossary } from "./main/glossary.data"
 
 import { external, this_ } from "lib-pareto-typescript-project/dist/submodules/project/shorthands"
 
@@ -22,21 +22,19 @@ export const $: g_project.T.Project<pd.SourceLocation> = {
     }),
     'type': ['library', {
         'main': {
-            'glossary': {
-
-                'root': glossary,
-
-                'imports': d({
-                    "common": external("glo-pareto-common"),
-                    "h": external("glo-astn-handlers"),
-                }),
-            },
-            'api': {
-                'root': api,
-                'imports': d({
-                    "this": this_(),
-                    "common": external("glo-pareto-common"),
-                }),
+            'definition': {
+                'glossary': {
+                    'root': glossary,
+                    'imports': d({
+                        "h": external("glo-astn-handlers"),
+                    }),
+                },
+                'api': {
+                    'root': api,
+                    'imports': d({
+                        "this": this_(),
+                    }),
+                },
             },
             'implementation': ['typescript', null],
         },
@@ -46,14 +44,26 @@ export const $: g_project.T.Project<pd.SourceLocation> = {
         'test': {
             'dependencies': d({
             }),
-            'glossary': {
-                'parameters': d({}),
-                'imports': d({}),
-                'types': d({}),
-                'type': ['synchronous', {
-                    'builders': d({}),
-                    'functions': d<g_glossary.T.Glossary._ltype.synchronous.functions.D<pd.SourceLocation>>({}),
-                }],
+            'definition': {
+                'glossary': {
+                    'root': {
+                        'parameters': d({}),
+                        'imports': d({}),
+                        'types': d({}),
+                        'type': ['synchronous', {
+                            'builders': d({}),
+                            'functions': d<g_glossary.T.Glossary._ltype.synchronous.functions.D<pd.SourceLocation>>({}),
+                        }],
+                    },
+                    'imports': d({}),
+                },
+                'api': {
+                    'imports': d({}),
+                    'root': {
+                        'algorithms': d({}),
+                    },
+                }
+
             },
             'imports': d({}),
         }

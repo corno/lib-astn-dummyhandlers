@@ -32,7 +32,7 @@ export const $: g_project.T.Project<pd.SourceLocation> = {
                 'api': {
                     'root': api,
                     'imports': d({
-                        "this": this_(),
+                        "this": this_()
                     }),
                 },
             },
@@ -50,10 +50,17 @@ export const $: g_project.T.Project<pd.SourceLocation> = {
                         'parameters': d({}),
                         'imports': d({}),
                         'types': d({}),
-                        'type': ['synchronous', {
-                            'builders': d({}),
-                            'functions': d<g_glossary.T.Glossary._ltype.synchronous.functions.D<pd.SourceLocation>>({}),
-                        }],
+                        'asynchronous': {
+                            'interfaces': d({}),
+                            'algorithms': d({}),
+                            
+                        },
+                        'synchronous': {
+                            'interfaces': d({}),
+                            'algorithms': d({}),
+                            
+                        },
+                    
                     },
                     'imports': d({}),
                 },

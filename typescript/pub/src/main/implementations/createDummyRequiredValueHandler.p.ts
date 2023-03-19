@@ -4,9 +4,9 @@ import * as g_h from "glo-astn-handlers"
 import { A } from "../api.generated"
 
 export const $$: A.createDummyRequiredValueHandler = () => {
-    function createDummyValueHandler<TokenAnnotation>(): g_h.I.ValueHandler<TokenAnnotation> {
+    function createDummyValueHandler<TokenAnnotation>(): g_h.ASYNC.I.ValueHandler<TokenAnnotation> {
 
-        function createDummyObjectHandler(): g_h.I.ObjectHandler<TokenAnnotation> {
+        function createDummyObjectHandler(): g_h.ASYNC.I.ObjectHandler<TokenAnnotation> {
             return {
                 data: {
                     property: () => {
@@ -19,7 +19,7 @@ export const $$: A.createDummyRequiredValueHandler = () => {
                 end: () => { },
             }
         }
-        function createDummyArrayHandler(): g_h.I.ArrayHandler<TokenAnnotation> {
+        function createDummyArrayHandler(): g_h.ASYNC.I.ArrayHandler<TokenAnnotation> {
             return {
                 data: () => {
                     return createDummyValueHandler()
@@ -27,7 +27,7 @@ export const $$: A.createDummyRequiredValueHandler = () => {
                 end: () => { }
             }
         }
-        function createDummyTaggedUnionHandler(): g_h.I.TaggedUnionHandler<TokenAnnotation> {
+        function createDummyTaggedUnionHandler(): g_h.ASYNC.I.TaggedUnionHandler<TokenAnnotation> {
             return {
                 option: () => createDummyRequiredValueHandler(),
                 missingOption: () => createDummyRequiredValueHandler(),
@@ -51,7 +51,7 @@ export const $$: A.createDummyRequiredValueHandler = () => {
         }
     }
 
-    function createDummyRequiredValueHandler<TokenAnnotation>(): g_h.I.RequiredValueHandler<TokenAnnotation> {
+    function createDummyRequiredValueHandler<TokenAnnotation>(): g_h.ASYNC.I.RequiredValueHandler<TokenAnnotation> {
         return {
             missing: () => {
             },

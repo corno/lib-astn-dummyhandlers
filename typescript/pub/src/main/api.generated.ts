@@ -8,5 +8,5 @@ export namespace A {
 }
 
 export type API = {
-    createDummyRequiredValueHandler: A.createDummyRequiredValueHandler
+    readonly 'createDummyRequiredValueHandler': A.createDummyRequiredValueHandler
 }

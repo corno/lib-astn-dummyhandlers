@@ -12,7 +12,7 @@ export namespace ASYNC {
         
         
         export namespace C {
-            export type CreateDummyRequiredValueHandler = <GAnnotation>($is: {}) => g_h.ASYNC.I.RequiredValueHandler<T.Annotation<GAnnotation>>
+            export type CreateDummyRequiredValueHandler = <GAnnotation>($is: null) => g_h.ASYNC.I.RequiredValueHandler<T.Annotation<GAnnotation>>
         }
     }
 }

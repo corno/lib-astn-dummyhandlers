@@ -7,6 +7,6 @@ const d = pd.d
 
 export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
     'algorithms': d({
-        "createDummyRequiredValueHandler": algorithm(aconstructor("this", { }, "CreateDummyRequiredValueHandler"), ['independent', null]),
+        "createDummyRequiredValueHandler": algorithm(aconstructor("this", {}, "CreateDummyRequiredValueHandler"), { "Annotation": "Annotation" }),
     }),
 }

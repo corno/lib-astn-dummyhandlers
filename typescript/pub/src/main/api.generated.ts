@@ -4,7 +4,7 @@ import * as g_this from "./glossary"
 
 export namespace A {
     
-    export type createDummyRequiredValueHandler = g_this.ASYNC.A.C.CreateDummyRequiredValueHandler
+    export type createDummyRequiredValueHandler = <GAnnotation>() => g_this.ASYNC.A.C.CreateDummyRequiredValueHandler<GAnnotation>
 }
 
 export type API = {

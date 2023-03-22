@@ -1,7 +1,7 @@
 import * as pd from 'pareto-core-data'
 
 import {
-    aconstructor,
+    constructor,
     typeReference,
     type,
     glossaryParameter,
@@ -25,7 +25,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'asynchronous': {
         'interfaces': d({}),
         'algorithms': d({
-          "CreateDummyRequiredValueHandler":  aconstructor(aInterfaceReference("h", "RequiredValueHandler"), {}),
+          "CreateDummyRequiredValueHandler":  constructor(aInterfaceReference("h", "RequiredValueHandler"), {}),
         }),
         
     },

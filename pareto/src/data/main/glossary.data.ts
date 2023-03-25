@@ -2,11 +2,9 @@ import * as pd from 'pareto-core-data'
 
 import {
     constructor,
-    typeReference,
-    type,
-    glossaryParameter,
     imp,
-    aInterfaceReference,
+    glossaryParameter,
+    aExternalInterfaceReference,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -17,15 +15,14 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
         "Annotation": null,
     }),
     'imports': d({
-        "h": imp({ "Annotation": typeReference("Annotation")})
+        "h": imp({ "Annotation": glossaryParameter("Annotation")})
     }),
     'types': d({
-        "Annotation": type(glossaryParameter("Annotation"))
     }),
     'asynchronous': {
         'interfaces': d({}),
         'algorithms': d({
-          "CreateDummyRequiredValueHandler":  constructor(aInterfaceReference("h", "RequiredValueHandler"), {}),
+          "CreateDummyRequiredValueHandler":  constructor(aExternalInterfaceReference("h", "RequiredValueHandler"), {}),
         }),
         
     },

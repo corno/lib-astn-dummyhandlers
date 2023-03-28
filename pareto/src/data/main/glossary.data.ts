@@ -15,21 +15,24 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
         "Annotation": null,
     }),
     'imports': d({
-        "h": imp({ "Annotation": glossaryParameter("Annotation")})
+        "h": imp({ "Annotation": glossaryParameter("Annotation") })
     }),
-    'types': d({
-    }),
+    'root': {
+        'namespaces': d({}),
+        'types': d({
+        }),
+    },
     'asynchronous': {
         'interfaces': d({}),
         'algorithms': d({
-          "CreateDummyRequiredValueHandler":  constructor(aExternalInterfaceReference("h", "RequiredValueHandler"), {}),
+            "CreateDummyRequiredValueHandler": constructor(aExternalInterfaceReference("h", "RequiredValueHandler"), {}),
         }),
-        
+
     },
     'synchronous': {
         'interfaces': d({}),
         'algorithms': d({}),
-        
+
     },
 
 }
